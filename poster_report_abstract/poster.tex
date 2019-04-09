@@ -1,0 +1,217 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Jacobs Landscape Poster
+% LaTeX Template
+% Version 1.0 (29/03/13)
+%
+% Created by:
+% Computational Physics and Biophysics Group, Jacobs University
+% https://teamwork.jacobs-university.de:8443/confluence/display/CoPandBiG/LaTeX+Poster
+% 
+% Further modified by:
+% Nathaniel Johnston (nathaniel@njohnston.ca)
+%
+% Modified further still by:
+% Abraham Nunes (nunes <at> dal <dot> ca)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[final]{beamer}
+
+\usepackage[scale=1.24]{beamerposter} % Use the beamerposter package for laying out the poster
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+
+\usetheme{confposter} % Use the confposter theme supplied with this template
+
+\setbeamercolor{block title}{fg=black,bg=white} % Colors of the block titles
+\setbeamercolor{block body}{fg=black,bg=white} % Colors of the body of blocks
+\setbeamercolor{block alerted title}{fg=white,bg=black} % Colors of the highlighted block titles
+\setbeamercolor{block alerted body}{fg=black,bg=white} % Colors of the body of highlighted blocks
+% Many more colors are available for use in beamerthemeconfposter.sty
+
+%-----------------------------------------------------------
+% Define the column widths and overall poster size
+% To set effective sepwid, onecolwid and twocolwid values, first choose how many columns you want and how much separation you want between columns
+% In this template, the separation width chosen is 0.024 of the paper width and a 4-column layout
+% onecolwid should therefore be (1-(# of columns+1)*sepwid)/# of columns e.g. (1-(4+1)*0.024)/4 = 0.22
+% Set twocolwid to be (2*onecolwid)+sepwid = 0.464
+% Set threecolwid to be (3*onecolwid)+2*sepwid = 0.708
+
+\newlength{\sepwid}
+\newlength{\onecolwid}
+\newlength{\twocolwid}
+\newlength{\threecolwid}
+\setlength{\paperwidth}{48in} % A0 width: 46.8in
+\setlength{\paperheight}{36in} % A0 height: 33.1in
+\setlength{\sepwid}{0.024\paperwidth} % Separation width (white space) between columns
+\setlength{\onecolwid}{0.22\paperwidth} % Width of one column
+\setlength{\twocolwid}{0.464\paperwidth} % Width of two columns
+\setlength{\threecolwid}{0.708\paperwidth} % Width of three columns
+\setlength{\topmargin}{-0.5in} % Reduce the top margin size
+%-----------------------------------------------------------
+
+\usepackage{graphicx}  % Required for including images
+
+\usepackage{booktabs} % Top and bottom rules for tables
+\usepackage{wrapfig}
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION 
+%----------------------------------------------------------------------------------------
+
+\title{ Three-Dimensional Deformation of a Bridge Truss Design} % Poster title
+
+\author{Bryan Whitacre} % Author(s)
+
+\institute{\small $^{1}$Department of Mathematics and Physics, Piedmont College, Demorest, GA
+           }% Institution(s)
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\addtobeamertemplate{block end}{}{\vspace*{2ex}} % White space under blocks
+\addtobeamertemplate{block alerted end}{}{\vspace*{2ex}} % White space under highlighted (alert) blocks
+
+\setlength{\belowcaptionskip}{2ex} % White space under figures
+\setlength\belowdisplayshortskip{2ex} % White space under equations
+
+\begin{frame}[t] % The whole poster is enclosed in one beamer frame
+
+\begin{columns}[t] % The whole poster consists of three major columns, the second of which is split into two columns twice - the [t] option aligns each column's content to the top
+
+\begin{column}{\sepwid}\end{column} % Empty spacer column
+
+\begin{column}{\onecolwid} % The first column
+
+
+%----------------------------------------------------------------------------------------
+%	OBJECTIVE
+%----------------------------------------------------------------------------------------
+\setbeamercolor{block alerted title}{fg=white,bg=ForestGreen}
+\setbeamercolor{block alerted body}{fg = black, bg = white}
+
+\begin{alertblock}{Abstract}
+\vspace{0.3in}
+The goal of this project is to study the deformation of bridge truss design in a three-dimensional way considering elasticities. This study uses a hand created Mathematica code. The original design of the code was created by Dr. Humphrey H. Hardy while working at Piedmont College, and further developed by Dr. Michael Berglund and myself. We can then take the code and test our code by creating a balsa wood bride and test it ourselves. We will set up a video camera while the bridge is being tested to create a graphical design to compare to the model created in Mathematica. We may then calculate the total forces per each member in our model to understand how the weight is distributed throughout the truss. 
+
+\end{alertblock}
+
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION
+%----------------------------------------------------------------------------------------
+\begin{block}{Introduction}
+We wish to discover the deformation of a bridge truss system when a given weight is put on it at any given node. Before diving into it we must first discuss the background information needed. We will first define a bridge to be {\bf a structure carrying a pathway or roadway over a depression or obstacle}\cite{1}. When we put an object on the bridge, we find that in some way the bridge will bend. We call this bend a bridge deck deflection. This is {when a portion of a structure moves from its original position because of forces acting on it}\cite{2}.
+From this deflection we can use the global stiffness matrix to calculate the new position of the bridge. 
+\end{block}
+
+
+
+
+%----------------------------------------------------------------------------------------
+
+\end{column} % End of the first column
+
+\begin{column}{\twocolwid} % The second column
+
+
+\begin{block}{method}
+To begin our understanding of a Three-Dimensional model, we must first understand how a Two-Dimensional object works. {insert picture}We will proceed by using figure 1. We must first take the beam that connects node 1 to node 2. We will find that $S = \frac{dx}{len}$ and  $C = \frac{dy}{len}$.Proceeding into our local K matrix for this given member we will find $K_1 = \frac{A E}{L}
+$$
+\begin{pmatrix}
+c^2 & cs & -c^2 & -cs\\
+cs & s^2 & -cs & -s^2\\
+-c^2 & -cs & c^2 & cs\\
+-cs & -s^2 & cs & s^2\\
+\end{pmatrix}
+$$
+$.
+$\frac{A E}{L}$ represents the cross sectional area of the give material multiplied by Young's modulus all over the length of the given member. For $K_1$ we find $C_1$ = .707 and $S_1$ = .707. 
+Completing our $K_1$ matrix we find $K_1 = \frac{A E}{\sqrt{2}}
+$$
+\begin{pmatrix}
+.5 & .5 & -.5 &-.5\\
+.5 & .5 & -.5 &-.5\\
+-.5 & -.5 & .5 &.5\\
+-.5 & -.5 & .5 &.5\\
+\end{pmatrix}
+$$
+$
+As we read the matrix now, one thing we must keep in mind is that reading the rows from left to right and columns from top to bottom we will label them in the order of 1, 2, 5, 6. This is due to the stress/strain forces that occur within the system as a weight acts upon it, and we are using 1/2 as the x,y coordinates for node 1 and 5/6 for node 2. We must continue this out for all possible members in the given system. As such, for this example we would have 7 local K matrices. Once this is complete we take a global $K_f$ matrix. We find $K_f = K_1 + K_2 + ... K_n$, where n is the number of members in the system. Breaking this down, $K_11 = K_11_1 + K_11_2+...+K_11_n$, where n represents which local matrix we are in. Furthermore, $K_11_1$ means that in $K_1$ we go to the row with a 1 and then, find where it meets the column with a 1. We then add that to $K_2$ and so on. We can formally write $K_11_1$
+as $K_xy_n$, where x is the row, y is the column, and n is the local K matrix. After completing this step we will achieve our global matrix $K_f$ which is shown in figure 2 {insert picture}.We then find which nodes are fixed, and which for the given example is node 1 and 5. So we find all of rows 1,2,9,10 can be ignored while setting up our system of equations. We then read our system of equations straight across with attaching a NV to each variable. As such see figure 3 {insert picture}. Once the given system of equations is obtained we solve for each unknown variable. This is turn will produce the new location of the given nodes in their given directions. 
+
+
+
+\end{block}
+
+
+
+\setbeamercolor{block alerted title}{fg=white,bg=ForestGreen}
+\setbeamercolor{block alerted body}{fg = black, bg = white}
+\begin{alertblock}{Application}
+Now that we have a basic understanding of a Two-Dimensional system converting to Three-Dimensional can be done. We find a few things are needed for the applications. The first thing we need is $Q = \frac{dz}{len}$. The second thing we need is we increase the local K matrix from a 4x4 to a 6x6. Lastly we need a new global stiffness matrix. The new matrix turns out to become 
+$$
+\begin{pmatrix}
+c^2 & cs & cq & -c^2 & -cs & -cq\\
+cs & s^2 & sq & -cs & -s^2 & -sq\\
+cq & sq & q^2 & -cq & -sq & -q^2\\
+-c^2 & -cs & -cq & c^2 & cs & cq\\
+-cs & -s^2 & -sq & cs & s^2 & sq\\
+-cq & -sq & -q^2 & cq & sq & q^2\\
+\end{pmatrix}
+$$
+From here we go through the same steps just with more nodes, members, and equations.
+\end{alertblock}
+\end{column}
+
+\begin{column}{\onecolwid} % The second column
+
+
+\setbeamercolor{block alerted title}{fg=white,bg=ForestGreen}
+\setbeamercolor{block alerted body}{fg = black, bg = white}
+\begin{alertblock}{Mathematica}
+We used this process to generate a code in Mathematica to automatically run this for us. The user inputs the node coordinates, as well inputs which nodes are connected to each other. The code then runs through the process of the global stiffness matrix to produce a new plot compared to the old plot. The new plot is the deformation of the bridge with the weight on it. {insert picture}. 
+
+
+
+\end{alertblock}
+
+\begin{block}{Future}
+Currently this Mathematica code only takes into account if you have diagonal beams in every plane. Given more time I would like to create it so it could work in any given case without diagonals in all planes. As well my next step would be to create a sliding weight where the bridge would deform as a weight would move across it, like an animation. 
+\end{block}
+
+\begin{alertblock}{References}
+https://www.merriam-webster.com/dictionary/bridge (1)
+http://goldengate.org/exhibits/bridge-deck-deflection.php (2)
+http://demonstrations.wolfram.com/MethodOfJointsToSolveATrussProblem/ (3)
+http://kis.tu.kielce.pl/mo/COLORADO_FEM/colorado/IFEM.Ch21.pdf (4)
+https://pinshape.com/items/9825-3d-printed-one-way-bridge (5)
+https://www.wood-database.com/balsa/ (6)
+
+\end{alertblock}
+
+\begin{block}{Acknowledgements}
+I would like to thank to thank Piedmont College, specifically the math and physics department. I would also like to extend my gratitude to Dr. Michael Berglund, Dr. Nathan Holt, and Dr. Humphrey Hardy for their efforts in helping me complete this project. It has been a pleasure working along side, and learning from you all.
+
+\end{block}
+\end{column}
+
+
+
+
+
+\end{columns} % End of all the columns in the poster
+
+\end{frame} % End of the enclosing frame
+
+\end{document}
+
